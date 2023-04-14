@@ -1,0 +1,78 @@
+// query Deals {
+//     Deals {
+//       Title
+//       Amount
+//       NoOfItems
+//       NoOfOrder
+//       Image
+//     }
+//   }
+
+
+
+
+
+// query Deal($dealId: ID!) {
+//     Deal(id: $dealId) {
+//       Title
+//       Amount
+//       NoOfItems
+//       NoOfOrder
+//       Image
+//     }
+//   }
+
+{  "dealId": "64353fa84c4bb7b918da49a2" }
+
+
+
+
+// mutation Mutation($input: CreateDealInput!) {
+//     CreateDeal(input: $input) {
+//       Amount
+//       NoOfItems
+//       Title
+//     }
+//   }
+
+{
+    "input": {
+      "Amount": 3000,
+      "BranchId": "64352aed3167cf27845a4bc1",
+      "CreatedBy": "64352aed3167cf27845a4bc1",
+      "Image": "64352aed3167cf27845a4bc1",
+      "NoOfItems": 5,
+      "Title": "Aftar Deal",
+      "NoOfOrder": 1,
+      "UpdatedBy": "64352aed3167cf27845a4bc1"
+    }
+  }
+
+
+
+
+
+//   mutation UpdateDeal($input: UpdateDealInput!, $updateDealId: ID!) {
+//     UpdateDeal(input: $input, id: $updateDealId) {
+//       _id
+//       Title
+//       NoOfItems
+//       NoOfOrder
+//     }
+//   }
+
+{
+    "input": {
+       "Amount": 3000,
+        "Image": "64352aed3167cf27845a4bc1",
+        "NoOfItems": 5,
+        "Title": "Aftar Deal",
+        "NoOfOrder": 1,
+        "UpdatedBy": "64352aed3167cf27845a4bc1"
+    },
+    "updateDealId": "64353fb24c4bb7b918da49a4"
+  }
+
+
+
+  

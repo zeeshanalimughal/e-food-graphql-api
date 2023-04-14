@@ -1,0 +1,108 @@
+// query Query {
+//     Coupons {
+//       CouponType
+//       Title
+//       Status
+//       StartDate
+//       EndDate
+//     }
+//   }
+
+
+
+
+// query Query($couponId: ID!) {
+//     Coupon(id: $couponId) {
+//        CouponType
+//       Title
+//       Status
+//       StartDate
+//       EndDate
+//     }
+//   }
+
+{  "couponId": "643536434de8a75b17c6074c" }
+
+
+
+
+
+
+
+// mutation CreateCoupon($input: CreateCouponInput!) {
+//     CreateCoupon(input: $input) {
+//       BranchId
+//       CouponType
+//       MinimumApplicableAmount
+//     }
+//   }
+
+{
+    "input": {
+      "BranchId": "64352aed3167cf27845a4bc1",
+      "UserCount": 10,
+      "CouponType": "percentage_of",
+      "CreatedBy": "64352aed3167cf27845a4bc1",
+      "EndDate": "Tue Apr 20 2023",
+      "Image": "64352aed3167cf27845a4bc1",
+      "MaxCount": 200,
+      "MinimumApplicableAmount": 2000,
+      "StartDate": "Tue Apr 11 2023",
+      "Title": "Ramzan sale",
+      "UpdatedBy": "64352aed3167cf27845a4bc1"
+    }
+  }
+
+
+
+
+
+
+
+//   mutation UpdateCoupon($couponId:ID!,$input: UpdateCouponInput!) {
+//     UpdateCoupon(input: $input, id:$couponId) {
+//       CouponType
+//       StartDate
+//       EndDate
+//       Status
+//       Title
+//       _id
+//     }
+//   }
+
+{
+    "input": {
+      "BranchId": "64352aed3167cf27845a4bc1",
+      "UserCount": 10,
+      "CouponType": "percentage_of",
+      "EndDate": "Tue Apr 20 2023",
+      "Image": "64352aed3167cf27845a4bc1",
+      "MaxCount": 200,
+      "MinimumApplicableAmount": 2000,
+      "StartDate": "Tue Apr 11 2023",
+      "Title": "Ramzan sale",
+      "UpdatedBy": "64352aed3167cf27845a4bc1",
+      "Status": true
+    },
+    "couponId": "643537417f41851c542da5df",
+  }
+
+
+
+  
+
+
+//   mutation Mutation($deleteCouponId: ID!) {
+//     DeleteCoupon(id: $deleteCouponId) {
+//       _id
+//       Title
+//     }
+//   }
+
+{
+    "deleteCouponId": "643537417f41851c542da5df"
+}
+
+
+
+

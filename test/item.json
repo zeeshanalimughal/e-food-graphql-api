@@ -1,0 +1,103 @@
+// query Items {
+//     Items {
+//       _id
+//       Title
+//       SKU
+//       Price
+//       Description
+//       OrderOfItems
+//     }
+//   }
+
+
+
+
+
+// query Items($itemId: ID!) {
+//     Item(id: $itemId) {
+//       _id
+//       Title
+//       SKU
+//       Price
+//       Description
+//       OrderOfItems
+//     }
+//   }
+
+
+{  "itemId": "643642da652d67996ad02139" }
+
+
+
+// mutation Mutation($input: CreateItemInput!) {
+//   CreateItem(input: $input) {
+//     Price
+//     Title
+//     SKU
+//   }
+// }
+
+
+
+{
+    "input": {
+      "Title": "Kabab Masala",
+      "SKU": "KM01",
+      "Price": 1150,
+      "Images": "6435457ffb1361035df9f459",
+      "Description": "Description here",
+      "OrderOfItems": 0,
+      "Tags": ["64352aed3167cf27845a4bc1"],
+      "CreatedBy": "64352aed3167cf27845a4bc1",
+      "UpdatedBy": "64352aed3167cf27845a4bc1",
+      "BranchesId": "64352aed3167cf27845a4bc1",
+      "AdditionalImages": ["64354559fb1361035df9f455","64354569fb1361035df9f457","6435457ffb1361035df9f459"],
+      "Category": "64352aed3167cf27845a4bc1"
+    }
+}
+
+
+
+
+
+// mutation Mutation($updateItemId:ID!,$input: UpdateItemInput!) {
+//     UpdateItem(id: $updateItemId, input: $input) {
+//       SKU
+//       Price
+//       Title
+//     }
+// }
+
+
+{
+    "input": {
+      "Title": "Kabab Roast",
+      "SKU": "KR01",
+      "Price": 1050,
+      "Images": "6435457ffb1361035df9f459",
+      "Description": "Description here",
+      "OrderOfItems": 0,
+      "Tags": ["64352aed3167cf27845a4bc1"],
+      "UpdatedBy": "64352aed3167cf27845a4bc1",
+      "BranchesId": "64352aed3167cf27845a4bc1",
+      "AdditionalImages": ["64354559fb1361035df9f455","64354569fb1361035df9f457","6435457ffb1361035df9f459"],
+      "Category": "64352aed3167cf27845a4bc1"
+    },
+    "updateItemId": "643642da652d67996ad02139",
+}
+
+
+
+
+
+
+// mutation Mutation($deleteItemId: ID!) {
+//     DeleteItem(id: $deleteItemId) {
+//       Title
+//       _id
+//     }
+// }
+
+{
+    "deleteItemId": "643642da652d67996ad02139"
+}

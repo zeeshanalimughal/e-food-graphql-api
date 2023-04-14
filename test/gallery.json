@@ -1,0 +1,77 @@
+// query Query($branchId: ID!) {
+//     Galleries(branchId: $branchId) {
+//       MediaUrl
+//       MediaType
+//     }
+//   }
+  
+{  "branchId": "64352aed3167cf27845a4bc1" }
+
+
+
+
+// query Query($id: ID!) {
+//     Gallery(_id: $id) {
+//         MediaUrl
+//       MediaType
+//     }
+//   }
+
+{  "id": "64354559fb1361035df9f455" }
+
+
+
+
+
+// mutation Mutation($input: CreateGalleryInput!) {
+//     CreateGallery(input: $input) {
+//       MediaType
+//       MediaUrl
+//     }
+//   }
+
+{
+    "input": {
+      "BranchId": "64352aed3167cf27845a4bc1",
+      "CreatedBy": "64352aed3167cf27845a4bc1",
+      "MediaType": "image",
+      "MediaUrl": "chicken-biryani.png",
+      "UpdatedBy": "64352aed3167cf27845a4bc1"
+    }
+}
+
+
+
+
+// mutation Mutation($updateGalleryId: ID!, $input: UpdateGalleryInput!) {
+//     UpdateGallery(id: $updateGalleryId, input: $input) {
+//       MediaType
+//       MediaUrl
+//     }
+//   }
+
+{ 
+  "updateGalleryId": "64354559fb1361035df9f455",
+  "input": {
+    "MediaType": "image",
+    "MediaUrl": "background.png",
+    "UpdatedBy": "64352aed3167cf27845a4bc1"
+  }
+}
+
+
+
+
+
+// mutation DeleteGallery($id: ID!, $deletedBy: ID!) {
+//     DeleteGallery(_id: $id, deletedBy: $deletedBy) {
+//       MediaUrl
+//       _id   
+//     }
+//   }
+
+
+{  
+  "id": "64354559fb1361035df9f455",
+  "deletedBy": "64352aed3167cf27845a4bc1"
+}
