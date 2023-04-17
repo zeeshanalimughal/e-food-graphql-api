@@ -26,6 +26,7 @@ const userType = gql`
       UpdatedBy: ID!
       DeletedBy: ID
       IsVerified: Boolean!
+      AccessToken: String!
   }
 
   type Address {
@@ -45,6 +46,11 @@ const userType = gql`
     BillingAddress: AddressInput!
     CreatedBy: ID
     UpdatedBy: ID
+  }
+
+  input SignInInput {
+    Email: String!
+    Password: String!
   }
   
   input UpdateUserInput {

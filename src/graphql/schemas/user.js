@@ -84,7 +84,6 @@ export const DeleteUser = Joi.object().keys({
 export const UpdateUserInput = Joi.object({
   FullName: Joi.string(),
   PhoneNum: Joi.string(),
-  Password: Joi.string(),
   EmailVerificationCode: Joi.string().allow(null),
   ShippingAddress: AddressInput,
   BillingAddress: AddressInput,
@@ -96,6 +95,11 @@ export const UpdateUserInput = Joi.object({
   Platform: Joi.string().allow(null),
   IsVerified: Joi.boolean().allow(null),
   UpdatedBy: Joi.string().objectId().required(),
+}).label('UpdateUserInput');
+
+export const SignInInput = Joi.object({
+  Email: Joi.string().required(),
+  Password: Joi.string().required(),
 }).label('UpdateUserInput');
 
 export const usergIdSchema = Joi.object({

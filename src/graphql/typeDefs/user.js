@@ -22,6 +22,8 @@ export default gql`
   extend type Mutation {
     CreateUser(input: CreateUserInput!): User!
 
+    SignInUser(input: SignInInput!): User!
+
     UpdateUser(id: ID!, input: UpdateUserInput!): User!
 
     DeleteUser(id: ID!): User!

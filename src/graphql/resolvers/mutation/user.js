@@ -3,6 +3,14 @@ import { UserService } from "../../../services";
 
 
 const userMutationResolvers = {
+  SignInUser: async (parent, { id, input }) => {
+    try {
+      const user = await UserService.signIn(input);
+      return user;
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  },
   CreateUser: async (parent, { id, input }) => {
     try {
       const user = await UserService.createUser(input);
