@@ -1,5 +1,5 @@
 import { AuthenticationError } from "apollo-server";
-import { User, Organization } from "./models";
+import { User } from "./models";
 const bcrypt = require("bcrypt");
 require("dotenv").config();
 

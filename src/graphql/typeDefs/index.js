@@ -1,11 +1,7 @@
 import user from "./user";
-import organization from "./organization";
 import root from "./root";
-import role from "./role";
 
 const { userType } = require("./types/user");
-const { organizationType } = require("./types/organization");
-const { RoleType } = require("./types/role");
 
 
 import branch from "./branch";
@@ -34,8 +30,6 @@ import { TagType } from "./types/tag"
 
 export default [
     user, userType,
-    organization, organizationType,
-    role, RoleType,
     branch, BranchType,
     coupon, CouponType,
     category, CategoryType,

@@ -1,6 +1,4 @@
 export { default as User } from "./user";
-export { default as Organization } from "./organization";
-export { default as Role} from "./role";
 export { default as Branch} from "./branch";
 export { default as Category } from "./category";
 export { default as Coupon } from "./coupon";

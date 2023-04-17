@@ -1,19 +1,72 @@
 const { gql } = require("apollo-server");
 
 const userType = gql`
-  type UserType {
-    id: ID!
-    Organization: String!
-    FirstName: String!
-    LastName: String!
-    Email: String
+  type User {
+      _id: ID
+      FullName: String!
+      PhoneNum: String!
+      BranchId: ID
+      Email: String!
+      EmailVerificationCode: String
+      OtpCode: String
+      OtpCodeExpiry: String
+      ShippingAddress: Address!
+      BillingAddress: Address!
+      FirstOrderAt: String
+      LoyaltyPoints: Int!
+      SocialPlatform: [String]
+      Platform: String
+      BlacklistedAt: String
+      BlacklistedBy: ID
+      Type: UserType!
+      CreatedAt: String!
+      UpdatedAt: String!
+      DeletedAt: String!
+      CreatedBy: ID
+      UpdatedBy: ID!
+      DeletedBy: ID
+      IsVerified: Boolean!
+  }
+
+  type Address {
+    Street: String!
+    City: String!
+    State: String!
+    Zip: String
+    Country: String!
+  }
+
+  input CreateUserInput {
+    FullName: String!
     PhoneNum: String!
-    ProfileImage: String!
-    createdAt: String
-    updatedAt: String
-    Role: String!
-    AccessToken: String
-    isVerfied:Boolean!
+    Password: String!
+    Email: String!
+    ShippingAddress: AddressInput!
+    BillingAddress: AddressInput!
+    CreatedBy: ID
+    UpdatedBy: ID
+  }
+  
+  input UpdateUserInput {
+    FullName: String
+    PhoneNum: String
+    Password: String
+    EmailVerificationCode: String
+    ShippingAddress: AddressInput
+    BillingAddress: AddressInput
+    OtpCode: String
+    OtpCodeExpiry: String
+    FirstOrderAt: String
+    LoyaltyPoints: Int!
+    SocialPlatform: [String]
+    Platform: String
+    IsVerified:Boolean
+    UpdatedBy: ID!
+  }
+
+  enum UserType {
+    guest
+    registered
   }
 
   type ForgotPasswordResponse {

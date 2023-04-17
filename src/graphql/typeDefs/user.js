@@ -9,9 +9,8 @@ export default gql`
   }
 
   extend type Query {
-    User(id: ID!): UserType @auth
-    Users: [UserType!]! @auth
-    UserEmails: [UserType!]!
+    User(id: ID!): User!
+    Users: [User!]!
   }
 
   input UserFilter {
@@ -21,52 +20,13 @@ export default gql`
   }
   
   extend type Mutation {
-    SignUp(
-      FirstName: String!
-      LastName: String!
-      Password: String!
-      Email: String!
-      Organization: String!
-      PhoneNum: String!
-      ProfileImage: String!
-      AccessToken: String
-    ): UserType @guest
+    CreateUser(input: CreateUserInput!): User!
 
-    EmailVerification(
-      email: String!
-      Code: String!
-    ):EmailVerfiedResponse!
-    AddUser(
-      FirstName: String!
-      LastName: String!
-      Password: String!
-      Email: String!
-      PhoneNum: String!
-      ProfileImage: String!
-      AccessToken: String
-    ): UserType @guest
+    UpdateUser(id: ID!, input: UpdateUserInput!): User!
 
-  
+    DeleteUser(id: ID!): User!
 
-    SignIn(Email: String!, Password: String!): UserType @guest
-    SignOut: Boolean @auth
-    UpdateUser(
-      id: ID!
-      FirstName: String!
-      LastName: String!
-      Email: String!
-      Organization: ID!
-      PhoneNum: String!
-      ProfileImage:String!
-      
-    ): UserType @auth
-
-    DeleteUser(
-      id: ID!
-    ): UserType @auth
-
-
-    changePassword(Password: String!, email: String!):PasswordChangedResponse!
+    ChangePassword(Password: String!, email: String!):PasswordChangedResponse!
 
     forgotPassword(email: String!): ForgotPasswordResponse!
 

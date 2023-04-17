@@ -11,17 +11,4 @@ export default {
   Mutation: {
     ...userMutationResolvers
   },
-  UserType: {
-
-    Organization: async (user, args, context, info) => {
-      await user.populate("Organization");
-      return user.Organization;
-    },
-    AccessToken: async (user, args, context, info) => {
-      
-      // user.Role="Organization User";
-      const token = generateToken(user);
-      return token;
-    },
-  },
 };

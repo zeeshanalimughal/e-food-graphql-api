@@ -9,7 +9,7 @@
     "start": "node -r esm ./src"
   },
   "keywords": [],
-  "author": "Zeeshan Ali",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.4.1",

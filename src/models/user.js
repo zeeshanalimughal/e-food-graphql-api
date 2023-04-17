@@ -3,11 +3,11 @@ const { compare, hash } = require("bcryptjs");
 const { generateOTP } = require("../utils/generateOtp");
 
 const addressSchema = new mongoose.Schema({
-  street: { type: String, required: true },
-  city: { type: String, required: true },
-  state: { type: String, required: true },
-  zip: { type: String, },
-  country: { type: String, required: true }
+  Street: { type: String, required: true },
+  City: { type: String, required: true },
+  State: { type: String, required: true },
+  Zip: { type: String, },
+  Country: { type: String, required: true }
 });
 
 const userSchema = new mongoose.Schema(
@@ -26,19 +26,19 @@ const userSchema = new mongoose.Schema(
     EmailVerificationCode: { type: String, default: "", },
     OtpCode: { type: String, default: "", },
     OtpCodeExpiry: { type: Date, default: Date.now, },
-    shippingAddress: { type: addressSchema, required: true },
-    billingAddress: { type: addressSchema, required: true },
+    ShippingAddress: { type: addressSchema, required: true },
+    BillingAddress: { type: addressSchema, required: true },
     FirstOrderAt: { type: Date, default: null },
     LoyaltyPoints: { type: Number, default: 0 },
-    SocialPlatform: { type: String, default: null },
-    Platform: { type: Object, default: null },
-    BlacklistedAt: { type: Date, default: false },
-    BlacklistedBy: { type: mongoose.Schema.Types.ObjectId, required: true },
+    SocialPlatform: { type: [String], default: [] },
+    Platform: { type: String, default: null },
+    BlacklistedAt: { type: Date, default: null },
+    BlacklistedBy: { type: mongoose.Schema.Types.ObjectId, default: null },
     Type: { type: String, enum: ['guest', 'registered'], default: 'guest' },
-    DeletedAt: { type: Date, required: true },
+    DeletedAt: { type: Date, default:null },
     CreatedBy: { type: mongoose.Schema.Types.ObjectId, default: null },
-    UpdatedBy: { type: mongoose.Schema.Types.ObjectId, required: true },
-    DeletedBy: { type: Date, required: true },
+    UpdatedBy: { type: mongoose.Schema.Types.ObjectId, default: null },
+    DeletedBy: { type: mongoose.Schema.Types.ObjectId, default: null },
     IsVerified: { type: Boolean, default: false }
   },
   { timestamps: true });

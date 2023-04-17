@@ -1,6 +1,4 @@
 import user from "./user";
-import organization from "./organization";
-import role from "./role";
 
 import branch from "./branch";
 import category from "./category";
@@ -13,8 +11,6 @@ import tag from "./tag";
 
 export default [
     user,
-    organization,
-    role,
     branch,
     category,
     coupon,

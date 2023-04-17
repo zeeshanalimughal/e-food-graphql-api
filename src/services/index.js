@@ -6,6 +6,7 @@ import { createGallery, deleteGallery, getGalleries, getGallery, updateGallery }
 import { createItem, updateItem, deleteItem, getItems, getItemById } from './ItemService';
 import { getOrders, getOrderById, createOrder, updateOrder, deleteOrder } from './OrderService';
 import { getTags, getTagById, createTag, updateTag, deleteTag } from './TagService';
+import { getUsers, getUser, createUser, updateUser, deleteUser } from './UserService';
 
 export const BranchService = {
     getBranch,
@@ -74,4 +75,13 @@ export const TagService = {
     createTag,
     updateTag,
     deleteTag
+}
+
+
+export const UserService = {
+    getUsers,
+    getUser,
+    createUser,
+    updateUser,
+    deleteUser
 }
